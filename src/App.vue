@@ -1,30 +1,29 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import ApiService from './api';
+
+export default {
+  data() {
+    return {
+      searchQuery: '',
+    };
+  },
+  methods: {
+    async search() {
+      try {
+        await ApiService.searchMovies(this.searchQuery);
+      } catch (error) {
+      }
+    },
+  },
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <div>
+    <input type="text" v-model="searchQuery" placeholder="Cerca il tuo film..." @keyup.enter="search">
+    <button @click="search">Cerca film</button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+<style>
 </style>
