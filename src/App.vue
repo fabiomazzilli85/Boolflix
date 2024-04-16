@@ -16,7 +16,6 @@
 
 <script>
 import axios from 'axios';
-// import ApiService from './api';
 
 export default {
   data() {
@@ -29,7 +28,7 @@ export default {
 
   methods: {
     search() {
-      console.log("SEARCH")
+      console.log("SEARCH");
       try {
         axios.get('https://api.themoviedb.org/3/search/movie', {
           params: {
@@ -40,13 +39,13 @@ export default {
         }).then(res => {
           this.searchResults = res.data.results;
           console.log(res);
-        })
+        });
 
       } catch (error) {
         console.error('Si è verificato un errore durante la ricerca:', error);
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
