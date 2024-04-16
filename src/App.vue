@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="search-tag">
     <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una serie TV">
     <button @click="search">Cerca film</button>
     <div v-if="searchResults && searchResults.length > 0 && searchResults !== null">
       <h2>Film trovati nel database:</h2>
       <ul>
         <li v-for="result in searchResults" :key="result.id">
-          {{ result.title }}
+          <strong>Titolo</strong>: {{ result.title }} - <strong>Titolo originale</strong>: {{ result.original_title }} -
+          <strong>Lingua</strong>: {{ result.original_language }} - <strong>Voto</strong>: {{ result.vote_average }}
         </li>
       </ul>
     </div>
@@ -51,4 +52,26 @@ export default {
 
 <style lang="scss">
 @use './style/general';
+
+h2 {
+  margin: 25px 0;
+}
+
+input {
+  margin: 25px 0;
+}
+
+button {
+  margin: 0 15px;
+  padding: 6px;
+  background-color: coral;
+  color: white;
+  border: none;
+}
+
+ul,
+li {
+  list-style: none;
+  line-height: 26px;
+}
 </style>
