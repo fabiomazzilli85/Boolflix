@@ -3,10 +3,12 @@ import ApiService from './api';
 
 export default {
   data() {
-    return {
-      searchQuery: '',
-    };
-  },
+  return {
+    searchQuery: '',
+    searchResults: [],
+  };
+},
+
   methods: {
     async search() {
       try {
@@ -19,9 +21,17 @@ export default {
 </script>
 
 <template>
-    <div>
-    <input type="text" v-model="searchQuery" placeholder="Cerca il tuo film..." @keyup.enter="search">
-    <button @click="search">Cerca film</button>
+   <div>
+    <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una serie TV">
+    <button @click="search">Cerca</button>
+    <div v-if="searchResults.length > 0">
+      <h2>Risultati della ricerca per "{{ searchQuery }}"</h2>
+      <ul>
+        <li v-for="result in searchResults" :key="result.id">
+          {{ result.original_title }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
