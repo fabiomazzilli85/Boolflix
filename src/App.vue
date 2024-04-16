@@ -3,7 +3,7 @@
     <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una serie TV">
     <button @click="search">Cerca film</button>
     <div v-if="searchResults && searchResults.length > 0 && searchResults !== null">
-      <h2>Risultati della ricerca per "{{ searchQuery }}"</h2>
+      <h2>Film trovati nel database:</h2>
       <ul>
         <li v-for="result in searchResults" :key="result.id">
           {{ result.title }}
@@ -49,4 +49,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+ul, li {
+  list-style: none;
+}
+</style>
