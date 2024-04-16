@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ApiService from './api';
+import movieAPI from './api'; 
 
 export default {
   data() {
@@ -39,5 +39,5 @@ export default {
 </script>
 
 <style>
+@use './style/general';
 </style>
-
