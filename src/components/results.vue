@@ -1,31 +1,27 @@
 <template>
-    <div v-if="searchResults && searchResults.length > 0 && searchResults !== null">
-        <h2>Film trovati nel database:</h2>
-        <ul>
-            <li v-for="result in searchResults" :key="result.id">
-                <strong>Titolo</strong>: {{ result.title }} - <strong>Titolo originale</strong>: {{
-                    result.original_title }} -
-                <strong>Lingua</strong>: {{ result.original_language }} - <strong>Voto</strong>: {{ result.vote_average
-                }}
-            </li>
-        </ul>
-    </div>
+  <div>
+    <h2>Film trovati nel nostro database:</h2>
+    <ul v-if="store.movies.length !== 0">
+      <Card v-for="movie in store.movies" :key="movie.id" :item="movie" />
+    </ul>
+    <p v-else>Il film non è stato trovato</p>
+  </div>
 </template>
 
 <script>
 import { store } from '../store.js'
 import Card from './card.vue'
 
-  export default {
-    components: {
-      Card
-    },
+export default {
+  components: {
+    Card
+  },
   data() {
-      return {
-        store: store
-      }
-    },
-  }
+    return {
+      store: store
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
