@@ -14,18 +14,8 @@ export default {
     Search,
     Results,
     Card,
-  },
-  data() {
-    return {
-      searchResults: [],
-    };
-  },
-  methods: {
-    handleSearchResults(results) {
-      this.searchResults = results;
-    }
   }
-};
+}
 </script>
 
 <style lang="scss">
