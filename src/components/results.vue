@@ -9,10 +9,9 @@
 
   <div>
     <h2>Serie TV trovate nel nostro database:</h2>
-    <ul v-if="store.movies.length !== 0">
-      <Card v-for="movie in store.movies" :key="movie.id" :item="movie" />
+    <ul>
+      <Card v-for="tvShow in store.tvs" :key="tvShow.id" :item="tvShow" />
     </ul>
-    <p v-else>La serie TV che hai cercato non è stata trovata.</p>
   </div>
 </template>
 
