@@ -6,6 +6,14 @@
     </ul>
     <p v-else>Il film non è stato trovato</p>
   </div>
+
+  <div>
+    <h2>Serie TV trovate nel nostro database:</h2>
+    <ul v-if="store.movies.length !== 0">
+      <Card v-for="movie in store.movies" :key="movie.id" :item="movie" />
+    </ul>
+    <p v-else>La serie TV che hai cercato non è stata trovata.</p>
+  </div>
 </template>
 
 <script>
