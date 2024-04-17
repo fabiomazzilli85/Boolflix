@@ -8,10 +8,16 @@
   </div>
 
   <div>
-    <h2>Serie TV trovate nel nostro database:</h2>
-    <ul>
-      <Card v-for="tvShow in store.tvs" :key="tvShow.id" :item="tvShow" />
+    <h2>Risultati della ricerca di Serie TV</h2>
+    <ul v-if="store.tvs.length !== 0">
+      <template v-for="tvShow in store.tvs" :key="tvShow.id">
+        <li><strong>Nome</strong>: {{ tvShow.name }}</li>
+        <li><strong>Lingua</strong>: {{ tvShow.original_language }}</li>
+        <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
+        <li><strong>Paese di Produzione</strong>: {{ tvShow.origin_country }}</li>
+      </template>
     </ul>
+    <p v-else>La serie TV non è stata trovata</p>
   </div>
 </template>
 
