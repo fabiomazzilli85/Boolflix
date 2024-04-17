@@ -22,5 +22,12 @@ export default {
 ul,
 li {
     list-style: none;
+    color: black;
+}
+ul { 
+    background-color: #8DECB4;
+    padding: 15px;
+    color: white;
+    margin: 10px;
 }
 </style>
