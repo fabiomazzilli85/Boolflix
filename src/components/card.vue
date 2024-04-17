@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li><strong>Titolo originale del film</strong>: {{ item.original_title }}</li>
+        <li><strong>Titolo originale</strong>: {{ item.original_title }}</li>
         <li><strong>Lingua</strong>: {{ item.original_language }}</li>
         <li><strong>Voto della critica</strong>: {{ item.vote_average }}</li>
     </ul>
