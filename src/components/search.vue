@@ -6,7 +6,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
+import { store } from '../store.js'
 
 export default {
     data() {
@@ -19,40 +20,34 @@ export default {
 
     methods: {
         search() {
-            console.log("SEARCH");
-            try {
-                axios.get('https://api.themoviedb.org/3/search/movie', {
-                    params: {
-                        api_key: this.API_KEY,
-                        query: this.searchQuery,
-                        language: 'it-IT',
-                    },
-                }).then(res => {
-                    this.searchResults = res.data.results;
-                    console.log(res);
-                });
+        axios.get('https://api.themoviedb.org/3/search/movie',{
+          params: {
+            api_key: 'e99307154c6dfb0b4750f6603256716d',
+            query: this.query
+          }
+        }).then((res) => {
+          console.log(res.data.results)
+          store.movies = res.data.results
+        })
 
-            } catch (error) {
-                console.error('Si è verificato un errore durante la ricerca:', error);
-            }
-        }
-    }
-};
+        console.log('recupero i dati di serie tv')
+      }
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
 @use './style/general';
 
 input {
-  margin: 25px 0;
+    margin: 25px 0;
 }
 
 button {
-  margin: 0 15px;
-  padding: 6px;
-  background-color: coral;
-  color: white;
-  border: none;
+    margin: 0 15px;
+    padding: 6px;
+    background-color: coral;
+    color: white;
+    border: none;
 }
-
 </style>
