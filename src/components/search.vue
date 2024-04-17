@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { store } from '../store.js'
+import axios from 'axios';
+import { store } from '../store.js';
 
 export default {
     data() {
@@ -18,21 +18,43 @@ export default {
 
     methods: {
         search() {
-        axios.get('https://api.themoviedb.org/3/search/movie',{
-          params: {
-            api_key: 'e99307154c6dfb0b4750f6603256716d',
-            query: this.searchQuery
-          }
-        }).then((res) => {
-          console.log(res.data.results)
-          store.movies = res.data.results
-        })
+            // Effettua una chiamata API per cercare i film
+            axios.get('https://api.themoviedb.org/3/search/movie', {
+                params: {
+                    api_key: 'e99307154c6dfb0b4750f6603256716d',
+                    query: this.searchQuery
+                }
+            })
+                .then((res) => {
+                    console.log(res.data.results);
+                    store.movies = res.data.results; // Assegna i risultati alla variabile store.movies
+                })
+                .catch((error) => {
+                    console.error('Errore nella ricerca dei film:', error);
+                });
 
-        console.log('recupero i dati di serie tv')
-      }
-    },
-  }
+            // Con questa chiamata invece vado alle ricerca di Serie TV. Ho cercato "Big Bang Theory", che in effetti è stato trovato correttamente.
+            axios.get('https://api.themoviedb.org/3/search/tv', {
+                params: {
+                    api_key: 'e99307154c6dfb0b4750f6603256716d',
+                    language: 'it_IT', 
+                    query: this.searchQuery
+                }
+            })
+                .then((res) => {
+                    console.log(res.data.results);
+                    store.series = res.data.results; 
+                })
+                .catch((error) => {
+                    console.error('Errore nella ricerca delle serie TV:', error);
+                });
+
+            console.log('Recupero i dati dei film e delle serie TV');
+        }
+    }
+}
 </script>
+
 
 <style lang="scss" scoped>
 @use './style/general';
