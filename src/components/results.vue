@@ -13,16 +13,19 @@
 </template>
 
 <script>
-export default {
-  props: {
-    searchResults: {
-      type: Array,
-      required: true,
-      validator: value => Array.isArray(value) && value.every(item => result.title && item['result.original_title'])
+import { store } from '../store.js'
+import Card from './card.vue'
 
-    }
+  export default {
+    components: {
+      Card
+    },
+  data() {
+      return {
+        store: store
+      }
+    },
   }
-};
 </script>
 
 <style lang="scss" scoped>
