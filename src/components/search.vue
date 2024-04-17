@@ -18,20 +18,20 @@ export default {
 
     methods: {
         search() {
-            axios.get('https://api.themoviedb.org/3/search/movie', {
-                params: {
-                    api_key: 'e99307154c6dfb0b4750f6603256716d',
-                    query: this.searchQuery
-                }
-            }).then((res) => {
-                console.log(res.data.results)
-                store.movies = res.data.results
-            })
+        axios.get('https://api.themoviedb.org/3/search/movie',{
+          params: {
+            api_key: 'e99307154c6dfb0b4750f6603256716d',
+            query: this.searchQuery
+          }
+        }).then((res) => {
+          console.log(res.data.results)
+          store.movies = res.data.results
+        })
 
-            console.log('recupero i dati di serie tv')
-        }
+        console.log('recupero i dati di serie tv')
+      }
     },
-}
+  }
 </script>
 
 <style lang="scss" scoped>
