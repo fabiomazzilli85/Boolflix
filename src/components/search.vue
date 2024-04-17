@@ -43,7 +43,7 @@ export default {
             })
                 .then((res) => {
                     console.log(res.data.results);
-                    store.series = res.data.results; 
+                    store.tvs = res.data.results; 
                 })
                 .catch((error) => {
                     console.error('Errore nella ricerca delle serie TV:', error);
