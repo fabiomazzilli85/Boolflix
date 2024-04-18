@@ -4,7 +4,7 @@
         <li><strong>Lingua:</strong></li>
         <li><img class="flag" :src="getFlag(item.original_language)" alt="Bandiera Nazione"></li>
         <li><strong>Voto della critica</strong>: {{ convertToStars(item) }}</li>
-        <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${item.poster_path}`" alt="Locandina">
+        <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="Locandina">
     </ul>
 </template>
 

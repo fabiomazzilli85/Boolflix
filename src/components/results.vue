@@ -18,7 +18,7 @@
             <li><strong>Lingua:</strong></li>
             <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
             <li><strong>Voto della critica</strong>: {{ convertToStars(tvShow) }}</li>
-            <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${tvShow.poster_path}`" alt="Locandina">
+            <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina">
           </ul>
         </div>
       </template>
