@@ -73,6 +73,7 @@ input {
     width: 230px;
     line-height: 30px;
     border-radius: 4px;
+    border:2px solid #ad0c12;
 }
 
 ul,
