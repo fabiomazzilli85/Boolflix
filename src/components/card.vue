@@ -1,10 +1,12 @@
 <template>
     <ul>
         <li><strong>Titolo originale</strong>: {{ item.original_title }}</li>
-        <img class="flag" v-if="item.original_language === 'it'" :src="itFlag" alt="Italian Flag">
-        <img class="flag" v-if="item.original_language === 'fr'" :src="frFlag" alt="French Flag">
-        <img class="flag" v-if="item.original_language === 'en'" :src="enFlag" alt="English Flag">
+        <li><strong>Lingua:</strong></li>
+        <li><img class="flag" v-if="item.original_language === 'it'" :src="itFlag" alt="Italian Flag"></li>
+        <li><img class="flag" v-if="item.original_language === 'fr'" :src="frFlag" alt="French Flag"></li>
+        <li><img class="flag" v-if="item.original_language === 'en'" :src="enFlag" alt="English Flag"></li>
         <li><strong>Voto della critica</strong>: {{ item.vote_average }}</li>
+        <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="Locandina">
     </ul>
 </template>
 
@@ -34,10 +36,10 @@ export default {
 ul,
 li {
     list-style: none;
-    color: black;
+    color: white;
 }
 
 .flag {
-    width: 150px;
+    width: 70px;
 }
 </style>
