@@ -15,7 +15,7 @@
         <div class="serie-list">
           <ul>
             <li><strong>Nome</strong>: {{ tvShow.name }}</li>
-            <li><strong>Lingua:</strong></li>
+            <li><strong>Lingua</strong>:</li>
             <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
             <li><strong>Voto della critica</strong>: {{ convertToStars(tvShow) }}</li>
             <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina">

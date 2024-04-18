@@ -1,7 +1,7 @@
 <template>
     <ul class="flex-film">
         <li><strong>Titolo</strong>: {{ item.original_title }}</li>
-        <li><strong>Lingua:</strong></li>
+        <li><strong>Lingua</strong>:</li>
         <li><img class="flag" :src="getFlag(item.original_language)" alt="Bandiera Nazione"></li>
         <li><strong>Voto della critica</strong>: {{ convertToStars(item) }}</li>
         <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="Locandina">
