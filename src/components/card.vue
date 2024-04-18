@@ -5,7 +5,6 @@
         <img class="flag" v-if="item.original_language === 'fr'" :src="frFlag" alt="French Flag">
         <img class="flag" v-if="item.original_language === 'en'" :src="enFlag" alt="English Flag">
         <li><strong>Voto della critica</strong>: {{ item.vote_average }}</li>
-        <li><strong>Uscita nei cinema</strong>: {{ item.release_date }}</li>
     </ul>
 </template>
 
