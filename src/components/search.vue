@@ -101,7 +101,7 @@ button {
 }
 
 .logo-netflix {
-    width: 100px;
+    width: 50px;
     display: block;
 }
 </style>
