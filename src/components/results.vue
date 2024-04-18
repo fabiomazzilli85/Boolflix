@@ -25,7 +25,7 @@
 
 <script>
 import { store } from '../store.js'
-import Card from './card.vue'
+import Card from './Card.vue'
 
 import itFlag from '../assets/it.png';
 import frFlag from '../assets/fr.png';

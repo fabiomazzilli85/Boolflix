@@ -4,9 +4,9 @@
 </template>
 
 <script>
-import Search from './components/search.vue';
-import Results from './components/results.vue';
-import Card from './components/card.vue';
+import Search from './components/Search.vue';
+import Results from './components/Results.vue';
+import Card from './components/Card.vue';
 
 
 export default {
