@@ -75,7 +75,7 @@ export default {
 
 h2 {
   margin: 25px 0;
-  color: coral;
+  color:#e3101e;
 }
 
 ul,
