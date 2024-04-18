@@ -6,7 +6,7 @@
             <li>Film</li>
             <li>Serie TV</li>
             <li>La Mia Lista</li>
-            <li>Il tuo abbonamento</li>
+            <li>Il Tuo Abbonamento</li>
         </ul>
         <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una Serie TV...">
         <button @click="search">Cerca film o serie</button>
