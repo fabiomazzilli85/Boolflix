@@ -1,5 +1,12 @@
 <template>
     <div class="search-tag">
+        <ul>
+            <img class="logo-netflix" src="../assets/netflix-logo.jpg" alt="">
+            <li>Home</li>
+            <li>Film</li>
+            <li>Serie TV</li>
+            <li>Il tuo abbonamento</li>
+        </ul>
         <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una serie TV">
         <button @click="search">Cerca film</button>
     </div>
@@ -63,11 +70,31 @@ input {
     margin: 25px 0;
 }
 
+ul, li {
+    display: flex;
+    gap: 20px;
+    color: white;
+    list-style: none;
+}
+.search-tag {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
 button {
     margin: 0 15px;
-    padding: 6px;
-    background-color: coral;
+    padding: 8px;
+    background-color: red;
+    border-radius: 4px;
     color: white;
     border: none;
+}
+
+.logo-netflix {
+    width: 150px;
+    display: block;
 }
 </style>
