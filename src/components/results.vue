@@ -17,7 +17,6 @@
         <img class="flag" v-if="tvShow.original_language === 'fr'" :src="frFlag" alt="French Flag">
         <img class="flag" v-if="tvShow.original_language === 'en'" :src="enFlag" alt="English Flag">
         <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
-        <li><strong>Paese di Produzione</strong>: {{ tvShow.origin_country }}</li>
       </template>
     </ul>
     
