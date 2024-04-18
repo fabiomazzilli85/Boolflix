@@ -7,7 +7,7 @@
     <p v-else>Il film non è stato trovato</p>
   </div>
 
-  <div class="margin-top-serie">
+  <div class="margin-serie">
     <h2>Serie TV trovate su Netflix:</h2>
 
     <div class="flex-show" v-if="store.tvs.length !== 0">
@@ -104,7 +104,7 @@ li {
   margin: 25px;
 }
 
-.margin-top-serie {
-  margin-top: 75px;
+.margin-serie {
+  margin: 75px 0;
 }
 </style>
