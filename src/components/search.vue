@@ -83,6 +83,10 @@ li {
     align-items: center;
 }
 
+li:hover {
+    color: #ad0c12; 
+}
+
 .search-tag {
     background-color: #141414;
     display: flex;
