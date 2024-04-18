@@ -18,7 +18,8 @@
             <li><strong>Lingua</strong>:</li>
             <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
             <li><strong>Voto della critica</strong>: {{ convertToStars(tvShow) }}</li>
-            <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina">
+            <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina"
+              @mouseover="fetchAdditionalInfo(tvShow.id)">
           </ul>
         </div>
       </template>
@@ -48,11 +49,9 @@ export default {
       itFlag: itFlag,
       frFlag: frFlag,
       enFlag: enFlag,
-      ciFlag: ciFlag,
-
-
     };
   },
+  
   methods: {
     getFlag(language) {
       const flags = {
