@@ -32,6 +32,7 @@ import frFlag from '../assets/fr.jpg';
 import enFlag from '../assets/en.jpg';
 import ciFlag from '../assets/ci.jpg';
 
+
 export default {
   components: {
     Card
@@ -42,6 +43,8 @@ export default {
       itFlag: itFlag,
       frFlag: frFlag,
       enFlag: enFlag,
+      ciFlag: ciFlag,
+
       
     };
   },
@@ -64,7 +67,7 @@ export default {
 @use './style/general';
 
 .flag {
-  width: 70px;
+  width: 50px;
   aspect-ratio: 1/1;
 }
 
