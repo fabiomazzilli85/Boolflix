@@ -9,7 +9,7 @@
             <li>Il tuo abbonamento</li>
         </ul>
         <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una Serie TV...">
-        <button @click="search">Cerca film</button>
+        <button @click="search">Cerca film o serie</button>
     </div>
 </template>
 
