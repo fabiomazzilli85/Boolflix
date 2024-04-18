@@ -7,8 +7,8 @@
     <p v-else>Il film non è stato trovato</p>
   </div>
 
-  <div>
-    <h2>Serie TV trovate su Netflix</h2>
+  <div class="margin-top-serie">
+    <h2>Serie TV trovate su Netflix:</h2>
 
     <div class="flex-show" v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
@@ -104,5 +104,9 @@ li {
     width: 200px;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+.margin-top-serie {
+  margin-top: 75px;
 }
 </style>
