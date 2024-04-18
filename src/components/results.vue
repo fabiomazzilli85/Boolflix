@@ -17,6 +17,7 @@
         <img class="flag" v-if="tvShow.original_language === 'fr'" :src="frFlag" alt="French Flag">
         <img class="flag" v-if="tvShow.original_language === 'en'" :src="enFlag" alt="English Flag">
         <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
+        <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina">
       </template>
     </ul>
     
@@ -51,7 +52,7 @@ export default {
 @use './style/general';
 
 .flag {
-    width: 150px;
+    width: 70px;
 }
 
 h2 {
@@ -61,6 +62,7 @@ h2 {
 
 ul,
 li {
+  color: white;
   list-style: none;
   line-height: 26px;
 }
