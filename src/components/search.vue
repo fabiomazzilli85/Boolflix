@@ -5,9 +5,10 @@
             <li>Home</li>
             <li>Film</li>
             <li>Serie TV</li>
+            <li>La Mia Lista</li>
             <li>Il tuo abbonamento</li>
         </ul>
-        <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una serie TV">
+        <input type="text" v-model="searchQuery" @keyup.enter="search" placeholder="Ricerca un film o una Serie TV...">
         <button @click="search">Cerca film</button>
     </div>
 </template>
@@ -68,6 +69,8 @@ export default {
 
 input {
     margin: 25px 0;
+    width: 200px;
+    height: auto;
 }
 
 ul,
@@ -80,17 +83,18 @@ li {
 }
 
 .search-tag {
-    background-color: black;
+    background-color: #141414;
     display: flex;
     align-items: center;
     gap: 30px;
     padding: 10px 20px;
+    margin-bottom: 50px;
 }
 
 button {
     margin: 0 15px;
     padding: 8px;
-    background-color: red;
+    background-color: #ad0c12;
     border-radius: 4px;
     color: white;
     border: none;
