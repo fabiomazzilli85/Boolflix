@@ -69,8 +69,9 @@ export default {
 
 input {
     margin: 25px 0;
-    width: 200px;
-    height: auto;
+    width: 230px;
+    line-height: 30px;
+    border-radius: 4px;
 }
 
 ul,
@@ -93,7 +94,7 @@ li {
 
 button {
     margin: 0 15px;
-    padding: 8px;
+    padding: 7px 10px;
     background-color: #ad0c12;
     border-radius: 4px;
     color: white;
@@ -103,5 +104,9 @@ button {
 .logo-netflix {
     width: 50px;
     display: block;
+}
+
+::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
 }
 </style>
