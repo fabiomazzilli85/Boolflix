@@ -51,7 +51,7 @@ li {
 }
 
 .flag {
-    width: 70px;
+    width: 50px;
     aspect-ratio: 1/1;
 }
 </style>
