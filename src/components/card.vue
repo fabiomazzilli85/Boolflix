@@ -2,10 +2,8 @@
     <ul class="flex-film">
         <li><strong>Titolo</strong>: {{ item.original_title }}</li>
         <li><strong>Lingua:</strong></li>
-        <li>
-            <img class="flag" :src="getFlag(item.original_language)" alt="Bandiera Nazione">
-        </li>
-        <li><strong>Voto della critica</strong>: {{ item.vote_average }}</li>
+        <li><img class="flag" :src="getFlag(item.original_language)" alt="Bandiera Nazione"></li>
+        <li><strong>Voto della critica</strong>: {{ convertToStars(item) }}</li>
         <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${item.poster_path}`" alt="Locandina">
     </ul>
 </template>
@@ -33,8 +31,12 @@ export default {
         };
         
         return flags[language];
+    },
+    convertToStars(item) {
+      const numStars = Math.round(item.vote_average / 2);
+      return '★'.repeat(numStars);
     }
-}
+  }
 }
 </script>
 

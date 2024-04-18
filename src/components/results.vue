@@ -13,11 +13,13 @@
     <div class="flex-show" v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
         <div class="serie-list">
-          <li><strong>Nome</strong>: {{ tvShow.name }}</li>
-          <li><strong>Lingua:</strong></li>
-          <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
-          <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
-          <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${tvShow.poster_path}`" alt="Locandina">
+          <ul>
+            <li><strong>Nome</strong>: {{ tvShow.name }}</li>
+            <li><strong>Lingua:</strong></li>
+            <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
+            <li><strong>Voto della critica</strong>: {{ convertToStars(tvShow) }}</li>
+            <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${tvShow.poster_path}`" alt="Locandina">
+          </ul>
         </div>
       </template>
     </div>
@@ -60,6 +62,10 @@ export default {
       };
 
       return flags[language];
+    },
+    convertToStars(tvShow) {
+      const numStars = Math.round(tvShow.vote_average / 2);
+      return '★'.repeat(numStars);
     }
   }
 }
@@ -75,7 +81,7 @@ export default {
 
 h2 {
   margin: 25px 0;
-  color:#e3101e;
+  color: #e3101e;
 }
 
 ul,
@@ -95,14 +101,14 @@ li {
 
 .serie-list {
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 25px;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
 }
 
 .locandina {
-    width: 200px;
-    object-fit: cover;
+  width: 200px;
+  object-fit: cover;
 }
 
 .margin-top-serie {
