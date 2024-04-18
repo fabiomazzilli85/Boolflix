@@ -10,14 +10,17 @@
   <div>
     <h2>Serie TV trovate su Netflix</h2>
 
-    <ul v-if="store.tvs.length !== 0">
+    <div class="flex-show" v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
-        <li><strong>Nome</strong>: {{ tvShow.name }}</li>
-        <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
-        <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
-        <img :src="`https://image.tmdb.org/t/p/w154/${tvShow.poster_path}`" alt="Locandina">
+        <div class="serie-list">
+          <li><strong>Nome</strong>: {{ tvShow.name }}</li>
+          <li><strong>Lingua:</strong></li>
+          <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
+          <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
+          <img class="locandina" :src="`https://image.tmdb.org/t/p/w154/${tvShow.poster_path}`" alt="Locandina">
+        </div>
       </template>
-    </ul>
+    </div>
 
     <p v-else>La serie TV non è stata trovata</p>
   </div>
@@ -45,7 +48,7 @@ export default {
       enFlag: enFlag,
       ciFlag: ciFlag,
 
-      
+
     };
   },
   methods: {
@@ -54,7 +57,6 @@ export default {
         'it': itFlag,
         'fr': frFlag,
         'en': enFlag,
-        'ci': ciFlag,
       };
 
       return flags[language];
@@ -80,14 +82,27 @@ ul,
 li {
   color: white;
   list-style: none;
-  line-height: 35px;
-  padding: 20px 30px;
+  line-height: 30px;
+  padding: 5px 30px;
 }
 
 .flex-show {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: center;
+}
+
+.serie-list {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+.locandina {
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 </style>
