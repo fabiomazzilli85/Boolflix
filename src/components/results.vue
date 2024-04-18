@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Film trovati nel nostro database:</h2>
+    <h2>Film trovati su Netflix:</h2>
     <ul v-if="store.movies.length !== 0">
       <Card v-for="movie in store.movies" :key="movie.id" :item="movie" />
     </ul>
@@ -8,7 +8,7 @@
   </div>
 
   <div>
-    <h2>Risultati della ricerca di Serie TV</h2>
+    <h2>Serie TV trovate su Netflix</h2>
     
     <ul v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
