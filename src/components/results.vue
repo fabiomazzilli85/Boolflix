@@ -13,9 +13,7 @@
     <ul v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
         <li><strong>Nome</strong>: {{ tvShow.name }}</li>
-        <img class="flag" v-if="tvShow.original_language === 'it'" :src="itFlag" alt="Italian Flag">
-        <img class="flag" v-if="tvShow.original_language === 'fr'" :src="frFlag" alt="French Flag">
-        <img class="flag" v-if="tvShow.original_language === 'en'" :src="enFlag" alt="English Flag">
+        <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
         <li><strong>Voto della critica</strong>: {{ tvShow.vote_average }}</li>
         <img :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="Locandina">
       </template>
@@ -44,6 +42,17 @@ export default {
         frFlag: frFlag, 
         enFlag: enFlag,
     };
+},
+methods: {
+        getFlag(language) {
+        const flags = {
+            'it': itFlag,
+            'fr': frFlag,
+            'en': enFlag
+        };
+        
+        return flags[language];
+    }
 }
 }
 </script>

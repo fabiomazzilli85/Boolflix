@@ -2,9 +2,13 @@
     <ul>
         <li><strong>Titolo originale</strong>: {{ item.original_title }}</li>
         <li><strong>Lingua:</strong></li>
-        <li><img class="flag" v-if="item.original_language === 'it'" :src="itFlag" alt="Italian Flag"></li>
-        <li><img class="flag" v-if="item.original_language === 'fr'" :src="frFlag" alt="French Flag"></li>
-        <li><img class="flag" v-if="item.original_language === 'en'" :src="enFlag" alt="English Flag"></li>
+        <li>
+            <img class="flag" :src="getFlag(item.original_language)" alt="Bandiera Nazione">
+            
+            <!-- <img class="flag" v-if="item.original_language === 'it'" :src="itFlag" alt="Italian Flag">
+            <img class="flag" v-if="item.original_language === 'fr'" :src="frFlag" alt="French Flag">
+            <img class="flag" v-if="item.original_language === 'en'" :src="enFlag" alt="English Flag"> -->
+        </li>
         <li><strong>Voto della critica</strong>: {{ item.vote_average }}</li>
         <img :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="Locandina">
     </ul>
@@ -22,13 +26,18 @@ export default {
             required: true
         }
     },
-    data() {
-        return {
-            itFlag: itFlag,
-            frFlag: frFlag, 
-            enFlag: enFlag,
+    
+    methods: {
+        getFlag(language) {
+        const flags = {
+            'it': itFlag,
+            'fr': frFlag,
+            'en': enFlag
         };
+        
+        return flags[language];
     }
+}
 }
 </script>
 
