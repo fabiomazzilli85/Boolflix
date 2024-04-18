@@ -12,8 +12,8 @@
 
     <div class="flex-show" v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
-        <div class="serie-list container-lg">
-          <ul>
+        <div>
+          <ul class="serie-list">
             <li><strong>Nome</strong>: {{ tvShow.name }}</li>
             <li><strong>Lingua</strong>:</li>
             <li><img class="flag" :src="getFlag(tvShow.original_language)" alt="Bandiera Nazione"></li>
@@ -35,7 +35,6 @@ import Card from './Card.vue'
 import itFlag from '../assets/it.jpg';
 import frFlag from '../assets/fr.jpg';
 import enFlag from '../assets/en.jpg';
-import ciFlag from '../assets/ci.jpg';
 
 
 export default {
