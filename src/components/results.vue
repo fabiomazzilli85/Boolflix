@@ -12,7 +12,7 @@
 
     <div class="flex-show" v-if="store.tvs.length !== 0">
       <template v-for="tvShow in store.tvs" :key="tvShow.id">
-        <div class="serie-list">
+        <div class="serie-list container-lg">
           <ul>
             <li><strong>Nome</strong>: {{ tvShow.name }}</li>
             <li><strong>Lingua</strong>:</li>
