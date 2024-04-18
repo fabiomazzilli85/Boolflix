@@ -1,7 +1,7 @@
 <template>
     <div class="search-tag">
         <ul>
-            <img class="logo-netflix" src="../assets/netflix-logo.jpg" alt="">
+            <img class="logo-netflix" src="../assets/netflix-logo.webp" alt="">
             <li>Home</li>
             <li>Film</li>
             <li>Serie TV</li>
@@ -44,13 +44,13 @@ export default {
             axios.get('https://api.themoviedb.org/3/search/tv', {
                 params: {
                     api_key: 'e99307154c6dfb0b4750f6603256716d',
-                    language: 'it_IT', 
+                    language: 'it_IT',
                     query: this.searchQuery
                 }
             })
                 .then((res) => {
                     console.log(res.data.results);
-                    store.tvs = res.data.results; 
+                    store.tvs = res.data.results;
                 })
                 .catch((error) => {
                     console.error('Errore nella ricerca delle serie TV:', error);
@@ -70,12 +70,15 @@ input {
     margin: 25px 0;
 }
 
-ul, li {
+ul,
+li {
     display: flex;
     gap: 20px;
     color: white;
     list-style: none;
+    align-items: center;
 }
+
 .search-tag {
     background-color: black;
     display: flex;
@@ -94,7 +97,7 @@ button {
 }
 
 .logo-netflix {
-    width: 150px;
+    width: 100px;
     display: block;
 }
 </style>
