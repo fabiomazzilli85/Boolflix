@@ -21,22 +21,22 @@ export default {
             required: true
         }
     },
-    
+
     methods: {
         getFlag(language) {
-        const flags = {
-            'it': itFlag,
-            'fr': frFlag,
-            'en': enFlag,
-        };
-        
-        return flags[language];
-    },
-    convertToStars(item) {
-      const numStars = Math.round(item.vote_average / 2);
-      return '★'.repeat(numStars);
+            const flags = {
+                'it': itFlag,
+                'fr': frFlag,
+                'en': enFlag,
+            };
+
+            return flags[language];
+        },
+        convertToStars(item) {
+            const numStars = Math.round(item.vote_average / 2);
+            return '★'.repeat(numStars);
+        }
     }
-  }
 }
 </script>
 
@@ -57,10 +57,5 @@ li {
     flex-direction: column;
     align-items: center;
     margin: 25px;
-}
-
-.locandina {
-    width: 200px;
-    object-fit: cover;
 }
 </style>

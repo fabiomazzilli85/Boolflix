@@ -106,11 +106,6 @@ li {
   margin: 25px;
 }
 
-.locandina {
-  width: 200px;
-  object-fit: cover;
-}
-
 .margin-top-serie {
   margin-top: 75px;
 }
