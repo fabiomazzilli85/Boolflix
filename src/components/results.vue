@@ -102,7 +102,6 @@ li {
 
 .locandina {
     width: 200px;
-    aspect-ratio: 1;
     object-fit: cover;
 }
 
