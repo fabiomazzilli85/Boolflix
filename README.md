@@ -1,7 +1,17 @@
-# Vue 3 + Vite
+# Progetto di Integrazione API di The Movie Database
+Questo progetto è stato abbastanza complesso da realizzare perché richiede l'integrazione di diverse tecnologie. 
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Descrizione del Progetto
+Fondamentalmente, il progetto consiste in chiamate API pubbliche a un sito internet, [The Movie Database (TMDb)](https://www.themoviedb.org/), che mette a disposizione degli sviluppatori web dati relativi ai film. I dati recuperati dall'API vengono poi stampati sulla pagina, includendo:
+- Il titolo del film cercato
+- La locandina
+- La lingua
+- Il voto degli utenti
 
-## Recommended IDE Setup
+Un buon lavoro, che dimostra la capacità di integrare fonti dati esterne e di presentarli in modo intuitivo e visivamente attraente.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Tecnologie Utilizzate
+- **HTML5**: Per la struttura del contenuto
+- **CSS3**: Per lo stile e il layout, utilizzando i colori ufficiali di Netflix (il rosso e il nero in esadecimale)
+- **JavaScript**: Per le chiamate API e la gestione dinamica del contenuto.
+
